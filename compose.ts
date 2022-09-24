@@ -2,7 +2,7 @@
 import type { Update } from "https://esm.sh/typegram@^3.12";
 import type { Context } from "./context.ts";
 
-type Handler<C extends Context> = (ctx: C) => Promise<void>;
+type Handler<C extends Context> = (ctx: C) => Promise<unknown> | unknown;
 type EndoFunction<T> = (t: T) => T;
 
 export type Extension<C extends Context, E extends object> = (ctx: C) => E;
