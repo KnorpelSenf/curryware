@@ -1,6 +1,5 @@
 /** @deprecated @file */
-import type { TelegramP } from "https://esm.sh/@telegraf/client@0.3.1";
-import type { Update, UserFromGetMe } from "https://esm.sh/typegram@^3.12";
+import { type TelegramP, type Update, type UserFromGetMe } from "./deps.ts";
 import type { Deunionize } from "./deunionize.ts";
 
 export type { Update };

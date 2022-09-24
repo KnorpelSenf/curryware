@@ -1,11 +1,11 @@
 import { createBot } from "./bot.ts";
 import { compose, Middleware, on, using } from "./compose.ts";
 
-import { Client } from "https://esm.sh/@telegraf/client@0.3.1";
 import { Context } from "./context.ts";
+import { Client } from "./deps.ts";
 import { editedMessage, message } from "./filters.ts";
 
-const client = new Client("token");
+const client = new Client("");
 
 interface Plugin0Data {
   value: number;
