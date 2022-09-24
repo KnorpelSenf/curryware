@@ -10,11 +10,7 @@ export type Filter<U extends Update> = (update: Update) => update is U;
 export type Middleware<C extends Context> = EndoFunction<Handler<C>>;
 
 export function compose<T>(...fns: EndoFunction<T>[]): EndoFunction<T> {
-  fns.reverse();
-  return (t: T) => {
-    for (const fn of fns) t = fn(t);
-    return t;
-  };
+  return (next: T) => fns.reduceRight((t, fn) => fn(t), next);
 }
 
 export function on<C extends Context, U extends Update>(
